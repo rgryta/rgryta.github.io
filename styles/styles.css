@@ -1,0 +1,144 @@
+@import url(fonts.css);
+
+:root {
+    --black: #0A0908;
+    --red: #49111C;
+    --white: #F2F4F3;
+    --green: #5C946E;
+    --purple: #9381FF;
+	--flame: #E4572E;
+	--lime: #FCFF4B;
+	--mint: #E6EFE9;
+	--sky: #42CAFD;
+	--magenta: #7C238C;
+}
+
+
+html {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    align-content: stretch;
+    flex-direction: column;
+	
+    height: 100vh;
+    width: 100vw;
+}
+
+body {
+	background-color: var(--red);
+    color: var(--white);
+    margin: 0px;
+    height: 100vh;
+    width: 100vw;
+	font-family: 'Alata', sans-serif;
+}
+
+h1, h2, h3, h4 {
+    font-variant: small-caps;
+}
+
+div.page {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    overflow-y: scroll;
+	width:100%;
+	padding: 0px;
+    display: flex;
+    flex-flow: column;
+	
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+div.page::-webkit-scrollbar {
+  display: none;
+}
+
+
+div.nav {
+    display: block;
+    position: fixed;
+    top: 10%;
+    z-index: 2;
+    right: 0px;
+    flex: 0 1 auto;
+	
+	width: 200px;
+}
+
+div.nav div {
+    display: block;
+    position: relative;
+	width: 200px;
+	height: 50px;
+    margin-bottom: 10px;
+}
+
+
+div.nav div div {
+    display: flex;
+    position: absolute;
+    right: 0px;
+	
+    border-radius: 20px 0px 0px 20px;
+    border-color: var(--black);
+    border-width: 5px 0px 5px 5px;
+    border-style: solid;
+	
+	background-color: var(--white);
+	color: var(--black);
+    font-size: x-large;
+    padding: 15px;
+	
+	
+    width: 50px;
+    transition: width 0.1s ease-in-out 0s;
+}
+
+
+div.nav div div:hover {
+    width: 200px;
+    cursor: pointer;
+}
+
+div.content {
+    display: contents;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    flex: 0 1 auto;
+	
+    text-align: justify;
+}
+
+div.content div {
+	padding: 50px;
+}
+
+div.filler {
+    flex: 1 1 auto;
+}
+
+
+
+div.footer {
+	background-color: var(--black);
+	color: var(--white);
+	
+    position: relative;
+    bottom: 0%;
+	width: 100%;
+    padding: 20px;
+    text-align: center;
+    flex: 0 1 40px;
+    box-sizing: border-box;
+	
+    z-index: 0;
+}
+
+a {
+	color: inherit;
+}
