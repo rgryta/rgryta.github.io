@@ -32,6 +32,10 @@ html {
 	
     height: 100vh;
     width: 100vw;
+	
+	-webkit-user-select: none;     
+	-moz-user-select: none;
+	user-select: none;
 }
 
 body {
@@ -47,7 +51,7 @@ h1, h2, h3, h4 {
     font-variant: small-caps;
 }
 
-div.page {
+#page {
     position: fixed;
     top: 0px;
     bottom: 0px;
@@ -61,58 +65,53 @@ div.page {
   scrollbar-width: none;
 }
 
-div.page::-webkit-scrollbar {
+#page::-webkit-scrollbar {
   display: none;
 }
 
 
-div.nav {
-    display: block;
+#nav {
+    display: flex;
     position: fixed;
     top: 10%;
-    z-index: 0;
-    right: 0px;
+    z-index: 2;
+    right: 10px;
     flex: 0 1 auto;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: space-evenly;
+    align-items: flex-start;
 	
-	width: 200px;
+	width: 65px;
 }
 
-div.nav div {
+#nav div.current {
+	padding-left: 10px;
+    border-left: solid;
+}
+
+#nav div.current:hover {
+	padding-left: 10px;
+}
+
+#nav div {
     display: block;
     position: relative;
-	width: 200px;
-	height: 50px;
-    margin-bottom: 10px;
+	height: 25px;
+	width: 65px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+	
+    transition: padding-left .2s;
+	
+	cursor: pointer;
+}
+#nav div:hover {
+	padding-left: 5px;
 }
 
-
-div.nav div div {
-    display: flex;
-    position: absolute;
-    right: 0px;
-    z-index: 2;
-	
-    border-radius: 20px 0px 0px 20px;
-    border-color: var(--main-border-color);
-    border-width: 5px 0px 5px 5px;
-    border-style: solid;
-	
-	color: var(--main-text-color);
-    font-size: x-large;
-    padding: 15px;
-	
-	
-    width: 50px;
-    transition: width 0.1s ease-in-out 0s;
-}
-
-
-div.nav div div:hover {
-    width: 200px;
-    cursor: pointer;
-}
-
-div.content {
+#content {
     display: contents;
     position: fixed;
     top: 0px;
@@ -123,17 +122,29 @@ div.content {
     text-align: justify;
 }
 
-div.content div {
-	padding: 50px;
+#content div {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	padding: 50px 175px 50px 100px;
+    align-self: center;
+	transition: all .3s;
+}
+#content div div {
+	position: unset;
+	top: unset;
+	left: unset;
+	padding: unset;
+    align-self: center;
 }
 
-div.filler {
+#filler {
     flex: 1 1 auto;
 }
 
 
 
-div.footer {
+#footer {
 	background-color: var(--secondary-bg-color);
 	color: var(--secondary-text-color);
 	
@@ -146,6 +157,9 @@ div.footer {
     box-sizing: border-box;
 	
     z-index: 0;
+}
+
+#footer small {
 }
 
 a {
