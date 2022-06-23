@@ -2,8 +2,6 @@ div.main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 400px;
-    height: 400px;
     justify-content: flex-start;
     position: relative;
     top: 10%;

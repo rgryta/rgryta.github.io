@@ -3,12 +3,22 @@ h1, h2, h3 {
 	margin-bottom: 0;
 }
 
+div.section{
+    width: 50vw;
+    text-align: -webkit-center;
+	text-align: -moz-center;
+}
+
+div.section:not(:first-of-type) {
+	margin-top: clamp(50px, 10vh, 200px);
+}
+
 div.project {
     display: flex;
     flex-direction: column;
 	min-width: 200px;
 	max-width: 900px;
-	margin-bottom: 65px;
+	margin-bottom: 20px;
 }
 
 

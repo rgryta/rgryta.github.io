@@ -64,7 +64,7 @@ function grabURL(url) {
 async function addNavSub(nav, product){
 								
 				let el = document.createElement("div")
-				el.style.right = "-6vw";
+				el.style.right = "-8vw";
 				el.innerText = product
 				nav.appendChild(el)
 				
@@ -104,7 +104,7 @@ function setNavBarClicks(xhr, content) {
                 let curr = content.querySelector("div.current")
 				curr.style.marginBottom = null
 				content.querySelectorAll("#nav div div").forEach( async function(el){
-					el.style.right = "-6vw"
+					el.style.right = "-8vw"
                     await new Promise(r => setTimeout(() => r(), 200));
 					el.remove()
 				})

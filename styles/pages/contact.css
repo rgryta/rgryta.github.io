@@ -3,6 +3,10 @@
 	--github: #231f20;
 	--fb: #3b5998;
 	--email: var(--flame);
+	
+	--contact-size: 20vw;
+	--contact-size-min: 200px;
+	--contact-size-max: 450px;
 }
 
 div.main {
@@ -29,33 +33,46 @@ div.contacts div {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+	justify-content: center;
 }
 div.contacts div div {
-	width: 200px;
-	height: 200px;
     justify-content: center;
     align-content: center;
-	background-color: var(--secondary-bg-color);
+	background: var(--black);
+}
+div.contacts div div div {
+	width: unset;
+	max-width: unset;
 }
 
-div.contacts div div:hover{
+div.contact:hover{
   filter: brightness(85%);
 }
+div.contact {
+	width: var(--contact-size) !important;
+	height: var(--contact-size) !important;
+	
+	max-width: var(--contact-size-max) !important;
+	max-height: var(--contact-size-max) !important;
+	
+	min-width: var(--contact-size-min) !important;
+	min-height: var(--contact-size-min) !important;
+}
 
-div.contacts object {
+div.contact object {
 	cursor: pointer;
     pointer-events: none;
 }
 
-div.contacts div.linkedin {
+div.contact.linkedin {
 	background-color: var(--linkedin);
 }
-div.contacts div.github {
+div.contact.github {
 	background-color: var(--github);
 }
-div.contacts div.fb {
+div.contact.fb {
 	background-color: var(--fb);
 }
-div.contacts div.email {
+div.contact.email {
 	background-color: var(--email);
 }

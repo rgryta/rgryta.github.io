@@ -22,33 +22,32 @@
 	
 	
 	
-	--nav-width: max(85px, 6vw);
-	--nav-right: max(30px, 2vw);
+	--nav-width: max(55px, 6vw);
+	--nav-right: max(35px, 2vw);
 	
-	--nav-height: max(25px, 1.6vw);
+	--nav-height: max(20px, 1.6vw);
 	
 	--nav-line: max(2px, .1vw);
 	
-	--nav-main-text: max(25px, 1.4vw);
-	--nav-sub-text: max(20px, 1vw);
+	--nav-main-text: max(20px, 1.4vw);
+	--nav-sub-text: max(16px, 1vw);
 	
-	--nav-main-offset: max(10px, 1vw);
-	--nav-sub-offset: max(5px, .5vw);
+	--nav-main-offset: max(8px, 1vw);
+	--nav-sub-offset: max(4px, .5vw);
 	
-	--nav-margin-base: max(5px, .4vw);
-	--nav-margin-large: max(35px, 2vw);
+	--nav-margin-base: max(3px, .4vw);
+	--nav-margin-large: max(25px, 2vw);
+	
+	--content-margin-right: max(100px, 17vw);
+	--content-margin-left: calc( max(100px, 17vw) - 90px ) ;
 }
 
 
 html {
-    margin: 0px;
     padding: 0px;
     display: flex;
     align-content: stretch;
     flex-direction: column;
-	
-    height: 100vh;
-    width: 100vw;
 	
 	-webkit-user-select: none;     
 	-moz-user-select: none;
@@ -58,15 +57,21 @@ html {
 body {
 	background-color: var(--main-bg-color);
     color: var(--main-text-color);
+	font-family: 'Alata', sans-serif;
+}
+
+html, body {
     margin: 0px;
     height: 100vh;
     width: 100vw;
-	font-family: 'Alata', sans-serif;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4 {
     font-variant: small-caps;
 }
+
 
 #page {
     position: fixed;
@@ -123,7 +128,7 @@ h1, h2, h3, h4 {
 	font-size: var(--nav-main-text);
 	
 	
-    transition: padding-left .2s, margin-bottom .2s, right 0.2s;
+    transition: all .2s;
 	
 	cursor: pointer;
 }
@@ -150,16 +155,17 @@ h1, h2, h3, h4 {
   content: "";
   position: absolute;
   display: block;
-  width: 100%;
+  width: 0%;
   height: var(--nav-line);
-  bottom: 40%;
+  bottom: 50%;
+  left: 0%;
   background-color: var(--main-text-color);
-  transform: scaleX(0);
-  transition: transform 0.2s ease;
+  transform: translateY(100%);
+  transition: width 0.2s ease;
 }
 
 #nav div div:hover::before {
-  transform: scaleX(1);
+  width: 100%;
 }
 
 
@@ -178,7 +184,7 @@ h1, h2, h3, h4 {
 	position: relative;
 	top: 0px;
 	left: 0px;
-	padding: 50px 175px 50px 100px;
+	padding: 50px var(--content-margin-right) 50px var(--content-margin-left);
     align-self: center;
 	transition: all .3s;
 }
@@ -210,9 +216,6 @@ h1, h2, h3, h4 {
 	
     z-index: 0;
 	
-}
-
-#footer small {
 }
 
 a {
