@@ -8,11 +8,13 @@ div.project {
     flex-direction: column;
 	min-width: 200px;
 	max-width: 900px;
+	margin-bottom: 65px;
 }
 
 
-div.project a {
+div.project u {
     align-self: center;
+	cursor: pointer;
 }
 
 div.techstack {

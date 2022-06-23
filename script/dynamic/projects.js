@@ -1,9 +1,5 @@
-var test = null
-var project = null
-var pname = null
-
 function setupProjectInfo(currentValue, currentIndex) {
-		pname = currentValue.getAttribute("name")
+		let pname = currentValue.getAttribute("name")
 		let url = getMainAddress() + "/project/" + pname
 	
 		
@@ -13,16 +9,17 @@ function setupProjectInfo(currentValue, currentIndex) {
 
 		xhr.onload = function() {
 			if (this.readyState === this.DONE && this.status === 200) {
-				project = document.querySelector("div.project[name='"+pname+"']")
+				let project = document.querySelector("div.project[name='"+pname+"']")
 				let doc = this.responseXML
-				test = this.responseXML
 				
-				let el = document.createElement("h2")
+				
+				let el = document.createElement("h3")
 				el.innerText = currentIndex+1
 				project.appendChild(el)
 				
-				el = document.createElement("h3")
+				el = document.createElement("h2")
 				el.innerText = doc.querySelector("#ptitle").innerText
+				el.style.marginTop = "0";
 				project.appendChild(el)
 				
 				el = document.createElement("div")
@@ -40,6 +37,8 @@ function setupProjectInfo(currentValue, currentIndex) {
 				el.appendChild(el_techstack)
 				
 				let techs = Array.from(doc.querySelectorAll("[tag='techstack']")).map(x => x.innerText)
+				techs = [...new Set(techs)];
+
 				techs.forEach(
 					function(currentValue, currentIndex, listObj) {
 						let el_techstack = document.createElement("span")
@@ -48,9 +47,17 @@ function setupProjectInfo(currentValue, currentIndex) {
 					}
 				)
 				
-				el = document.createElement("a")
+				el = document.createElement("u")
 				el.setAttribute("href","/project/"+pname)
 				el.innerText = "Learn more"
+				el.addEventListener("click", function(){
+					let subaddress = this.getAttribute("href")
+					let url = getMainAddress() + subaddress
+					grabURL(url)
+					
+					let nav_element = document.querySelector("#nav div[page='projects']")
+					addNavSub(nav_element, doc.querySelector("#ptitle").getAttribute("shortname"))
+					})
 				project.appendChild(el)
 				
 				
@@ -61,7 +68,7 @@ function setupProjectInfo(currentValue, currentIndex) {
 
 
 function pageLoaded() {
-	console.log("Loading")
+	console.log("Loading projects...")
 	
 	let sections = document.querySelectorAll("div.section")
 	
