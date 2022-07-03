@@ -1,4 +1,113 @@
 div.section {
-	min-width: 200px;
-	max-width: 700px;
+     min-width: 200px;
+     max-width: 100%;
 }
+ div.section > div {
+     display:flex;
+     flex-direction: column;
+     align-items: center;
+}
+ div.badges,div.badges::before,div.badges::after,div.badges ::before,div.badges ::after {
+     --bg-ease-in-width: max(30px, 2vw);
+     --badge-size: max(100px, 15vw);
+     --badge-margin: max(5px, .5vw);
+     --badge-text-size: max(20px, 2vw);
+     --w: calc( var(--badge-size) + calc( 2 * var(--badge-margin)));
+     --c: var(--badge-count);
+     --min: calc( -1 * var(--w));
+     --max: calc(var(--c) * var(--w));
+     --full-duration: calc(2s * var(--c));
+}
+ div.badges {
+     width: min(100%,calc(var(--c) * var(--w)));
+     height: calc(var(--badge-size) + var(--badge-text-size));
+     position: relative !important;
+     overflow: hidden;
+     display: flex;
+     flex-direction: row;
+     justify-content: space-evenly;
+     flex-wrap: nowrap;
+     align-items: flex-start;
+     pointer-events: none;
+}
+ div.badges:hover {
+     animation-play-state: paused;
+}
+ div.badges::before,div.badges::after {
+     position: absolute;
+     height: 100%;
+     width: var(--bg-ease-in-width);
+     z-index: 1;
+     content: "";
+}
+ div.badges::before {
+     left: 0%;
+     background: linear-gradient(90deg, rgba(var(--white-rgb),1) 75%, rgba(var(--white-rgb),0) 100%);
+}
+ div.badges::after {
+     right: 0%;
+     background: linear-gradient(90deg, rgba(var(--white-rgb),0) 0%, rgba(var(--white-rgb),1) 25%);
+}
+ @keyframes badge-animation {
+     0% {
+         left: var(--max);
+    }
+     100% {
+         left: var(--min);
+    }
+}
+ div.badges > div {
+     --index: calc(var(--i) - 1);
+     --delay: calc( -1 * calc(2s * var(--i)));
+     height: var(--badge-size);
+     width: var(--badge-size);
+     max-height: var(--badge-size);
+     max-width: var(--badge-size);
+     margin: 0px var(--badge-margin);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     position: absolute;
+     pointer-events: auto;
+     cursor: pointer;
+     animation-name: badge-animation;
+     animation-duration: var(--full-duration);
+     animation-delay: var(--delay);
+     animation-iteration-count: infinite;
+     animation-timing-function: linear;
+     animation-play-state: inherit;
+}
+ div.badges > div::after {
+     content:attr(badge);
+     position: absolute;
+     filter: opacity(0);
+     left: 50%;
+     transform: translateX(-50%);
+     bottom: calc(-1 * var(--badge-text-size));
+     text-overflow: ellipsis;
+     overflow: hidden;
+     width: 100%;
+     height: var(--badge-text-size);
+     font-size: calc(.73 * var(--badge-text-size));
+     text-align: center;
+     transition: filter .1s ease-in-out;
+}
+ div.badges > div:hover::after {
+     filter: opacity(1);
+}
+ div.badges > div:hover {
+     cursor: help;
+}
+ div.badges > div > * {
+     height: inherit;
+     max-height: inherit;
+     max-width: inherit;
+     resize: horizontal;
+}
+ div.badges > div > a > * {
+     height: inherit;
+     max-height: inherit;
+     max-width: inherit;
+     resize: horizontal;
+}
+ 

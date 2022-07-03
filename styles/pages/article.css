@@ -1,0 +1,39 @@
+ div.page-content {
+     display: flex;
+     flex-direction: column;
+     align-content: flex-start;
+     align-items: center;
+}
+ #article-image {
+     box-sizing: border-box;
+     max-width: 100% !important;
+     max-height: 15vw !important;
+     align-self: center !important;
+     transition: transform .2s .1s;
+     transform: scale3d(1,1,1);
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+}
+ #article-image object {
+     max-width: inherit;
+     max-height: inherit;
+}
+ #article-title {
+     font-size: 2.5em !important;
+     width: min(100%, 60vw);
+     text-align: center;
+}
+ .article-content {
+     margin: max(20px, 1vh);
+}
+ .chapter {
+     margin: max(20px, 1vh);
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+}
+ .chapter::before {
+     content: attr(name)" ";
+     font-weight: bold;
+}

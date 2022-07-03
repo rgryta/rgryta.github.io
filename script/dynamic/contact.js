@@ -1,3 +1,4 @@
 function pageLoaded() {
-	console.log("Nothing to execute")
+    console.log("Nothing to execute")
+}
 }

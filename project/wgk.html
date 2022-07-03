@@ -6,33 +6,34 @@
     <meta name="description" content="R. Gryta • All the finished projects.">
     <link rel="stylesheet" type="text/css" href="/styles/styles.css">
     <script src="/script/main.js"></script>
-    <script id="dynamicscript" src="/script/dynamic/projects.js"></script>
+    <script id="dynamicscript" src="/script/dynamic/project.js"></script>
   </head>
   <body>
     <div id="page">
-	  <div id="start"></div>
+      <div id="start"></div>
       <div id="nav"></div>
       <div id="content">
-        <div class="project">
-          <h2 id="ptitle" shortname="WGK">Isometric Dungeon Crawler</h2>
-          <span id="pshortdesc">Unreal Engine 4 Project for WGK subject.</span>
-          <img class="picon" src="/img/projects/Default.png" alt="Default icon">
-          <span class="pdescription">  <br>
-            <strong>Abstract.</strong> 3D dungeon-crawler set in an isometric view done in Unreal Engine 4.25.4.0. Features: <span class="identList">- AI allowing for area queries in search of a position that allows to shoot at player</span>
-            <span class="identList">- Dynamic weapon switching (using the same event with different outcomes depending on equipped weapon)</span>
-            <span class="identList">- Inverse kinematics for holding weapons (allows for a weapon to be in the same position all the time)</span>
-            <span class="identList">- Multiple levels and menu with proper switching logic</span>
-            <br>
-            <strong>Architecture.</strong> Whole project was done using Unreal Engine 4 (version 4.25.4.0). </span>
-          <img class="picon" src="/img/projects/UnrealEngine.png" alt="Identity Data Provider">
-          <span class="ptechstack">
-            <strong>Technology:</strong>
-            <span class="indentList">Unreal Engine 4</span>
-          </span>
-          <span class="plinks">
-            <strong>Links:</strong>
-            <a class="indentList" href="https://github.com/rgryta/WGK-Isometric-Dungeon-Crawler" target="_blank">GitHub Page</a>
-          </span>
+        <div>
+          <link rel="stylesheet" type="text/css" href="/styles/pages/project.css">
+          <div class="page-content">
+            <div id="picon">
+              <object data="/img/project/wgk/UnrealEngine.png"></object>
+            </div>
+            <h1 id="ptitle" shortname="WGK">Isometric Dungeon Crawler</h1>
+            <span id="pshortdesc">Unreal Engine 4 Project for WGK subject.</span>
+            <div class="pchapter" chapter="Abstract" delimiter=".">3D dungeon-crawler set in an isometric view done in Unreal Engine 4.25.4.0. Features: <span class="identList">AI allowing for area queries in search of a position that allows to shoot at player</span>
+              <span class="identList">Dynamic weapon switching (using the same event with different outcomes depending on equipped weapon)</span>
+              <span class="identList">Inverse kinematics for holding weapons (allows for a weapon to be in the same position all the time)</span>
+              <span class="identList">Multiple levels and menu with proper switching logic</span>
+            </div>
+            <div class="pchapter" chapter="Architecture" delimiter=".">Whole project was done using Unreal Engine 4 (version 4.25.4.0).</div>
+            <div class="pchapter" chapter="Technologies" delimiter=":">
+              <span tag="techstack">Unreal Engine 4</span>
+            </div>
+            <div class="pchapter" chapter="Links" delimiter=":">
+              <a href="https://github.com/rgryta/WGK-Isometric-Dungeon-Crawler" target="_blank">GitHub Page</a>
+            </div>
+          </div>
         </div>
       </div>
       <div id="filler"></div>

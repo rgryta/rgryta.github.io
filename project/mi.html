@@ -6,31 +6,31 @@
     <meta name="description" content="R. Gryta • All the finished projects.">
     <link rel="stylesheet" type="text/css" href="/styles/styles.css">
     <script src="/script/main.js"></script>
-    <script id="dynamicscript" src="/script/dynamic/projects.js"></script>
+    <script id="dynamicscript" src="/script/dynamic/project.js"></script>
   </head>
   <body>
     <div id="page">
-	  <div id="start"></div>
+      <div id="start"></div>
       <div id="nav"></div>
       <div id="content">
-        <div class="project">
-          <h2 id="ptitle" shortname="MI">Model Identification</h2>
-          <span id="pshortdesc">Modular privacy-oriented file manager for Android with dedicated plugin support.</span>
-          <img class="picon" src="/img/projects/Default.png" alt="Default icon">
-          <span class="ptitle">
-            <h2> </h2>
-          </span>
-          <span class="pdescription">
-            <strong>Abstract.</strong> Model a system for water level within steam drum and pressure of combustion chamber based on collection of real data. </span>
-          <span class="ptechstack">
-            <strong>Technology:</strong>
-            <span class="indentList">Jupyter Notebook</span>
-            <span class="indentList">Matlab</span>
-          </span>
-          <span class="plinks">
-            <strong>Links:</strong>
-            <a class="indentList" href="https://github.com/kubasikora/MI-Projekt" target="_blank">GitHub Page</a>
-          </span>
+        <div>
+          <link rel="stylesheet" type="text/css" href="/styles/pages/project.css">
+          <div class="page-content">
+            <div id="picon">
+              <object data="/img/default.svg"></object>
+            </div>
+            <h1 id="ptitle" shortname="MI">Model Identification</h1>
+            <span id="pshortdesc">System modelling project for MI subject.</span>
+            <div class="pchapter" chapter="Abstract" delimiter=".">Model a system for water level within steam drum and pressure of combustion chamber based on collection of real data.</div>
+            <div class="pchapter" chapter="Architecture" delimiter=".">Half of the analysis of raw data was performed using Python libraries within Jupyter Notebook while the other half was Matlab native.</div>
+            <div class="pchapter" chapter="Technologies" delimiter=":">
+              <span tag="techstack">Jupyter Notebook</span>
+              <span tag="techstack">Matlab</span>
+            </div>
+            <div class="pchapter" chapter="Links" delimiter=":">
+              <a href="https://github.com/kubasikora/MI-Projekt" target="_blank">GitHub Page</a>
+            </div>
+          </div>
         </div>
       </div>
       <div id="filler"></div>

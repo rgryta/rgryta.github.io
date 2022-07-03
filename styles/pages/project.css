@@ -1,0 +1,213 @@
+h1, h2, h3 {
+     text-align: center;
+     margin-bottom: 0;
+}
+ div.page-content {
+     display: flex;
+     flex-direction: column;
+     align-content: flex-start;
+}
+ #picon {
+     box-sizing: border-box;
+     width: 15vw !important;
+     height: 15vw !important;
+     align-self: center !important;
+     transition: transform .2s .1s;
+     transform: scale3d(1,1,1);
+}
+ #picon:hover {
+     transition: unset;
+     transform: var(--transform);
+}
+ #picon object {
+     width: 100%;
+     height: 100%;
+}
+ #ptitle {
+     font-size: 2.5em !important;
+     width: min(100%, 60vw);
+     align-self: center;
+}
+ #pshortdesc {
+     margin-top: max(20px, 1vh);
+     align-self: center;
+     font-size: 0.8em !important;
+}
+ .pchapter {
+     margin: max(20px, 1vh);
+}
+ .pchapter::before {
+     content: attr(chapter)attr(delimiter)" ";
+     font-weight: bold;
+}
+ .pchapter * {
+     margin-left: max(20px, 1vh);
+}
+ #pcomptab {
+     background-color: var(--red);
+     padding: 0px 50px !important;
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     justify-content: center;
+     align-items: flex-start;
+     margin-inline: auto;
+     border-radius: max(20px, 2vw);
+}
+ .pcompbutton {
+     border: unset;
+     background-color: inherit;
+     color: var(--secondary-text-color);
+     float: left;
+     cursor: pointer;
+     transition: filter 0.3s !important;
+     min-width: 100px;
+}
+ .pcompbutton:hover {
+     filter: brightness(85%);
+}
+ .pcompbutton.active {
+     filter: brightness(85%);
+}
+ .pcompbutton div {
+     display: flex;
+     flex-direction: column;
+     flex-wrap: nowrap;
+     align-items: center;
+     min-width: 100px;
+     width: 12vw !important;
+     resize: horizontal;
+     font-weight: bolder;
+}
+ .pcompbutton object {
+     min-width: 100px;
+     min-height: 100px;
+     width: 8vw;
+     height: 8vw;
+     resize: horizontal;
+}
+ .pcompbutton div::after {
+     transition: opacity .2s !important;
+     margin-bottom: calc(var(--content-font-size) * 0.4);
+     content: attr(name);
+     opacity: 0;
+     font-size: calc(var(--content-font-size) * 0.8);
+     text-overflow: ellipsis;
+     white-space: nowrap;
+     overflow: hidden;
+     max-width: 100%;
+}
+ .pcompbutton div:hover::after {
+     opacity: 1;
+}
+ .pcompbutton.active div::after {
+     opacity: 1;
+}
+ .pcomponent {
+     position: relative !important;
+     width: max(500px,35vw) !important;
+     align-self: center !important;
+     display: none;
+}
+ .pcomponent * {
+     margin-top: max(5px, 1vw);
+}
+ .pcomponent.active {
+     display: block;
+     right: 0%;
+}
+ .identList {
+     display: block;
+}
+ .identList::before {
+     content: "-";
+     margin-right: max(5px, .8vw);
+}
+ .photogallery {
+     display: flex;
+     flex-direction: row;
+     flex-wrap: nowrap;
+     align-items: center;
+     max-width: 100% !important;
+     height: max(200px,30vh) !important;
+     position: relative !important;
+     align-self: center !important;
+     justify-content: flex-start;
+     color: var(--secondary-text-color);
+     background-color: var(--red);
+     margin: max(20px, 2vw) !important;
+     padding: max(20px, 2vw) 0 !important;
+     border-radius: max(20px, 2vw);
+     pointer-events: none;
+     overflow: hidden;
+}
+ .photogallery::before,.photogallery::after {
+     width: max(30px, 2vw);
+     padding: max(20px, 2vw);
+     height: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background-color: var(--red);
+     pointer-events: all;
+     cursor: pointer;
+     z-index: 1;
+     font-size: 2em;
+}
+ .photogallery::before {
+     position: absolute;
+     left: 0%;
+     content: "⮜";
+     background: linear-gradient(90deg, rgba(var(--red-rgb),1) 75%, rgba(var(--red-rgb),0) 100%);
+}
+ .photogallery::after {
+     position: absolute;
+     right: 0%;
+     content: "⮞";
+     background: linear-gradient(90deg, rgba(var(--red-rgb),0) 0%, rgba(var(--red-rgb),1) 25%);
+}
+ .photogallery > .gallery {
+     position: relative;
+     z-index: 0;
+     left: 10%;
+     display: flex;
+     flex-direction: row;
+     flex-wrap: nowrap;
+     align-items: center;
+     justify-content: flex-start;
+}
+ .photogallery > .gallery * {
+     margin: 0 max(20px, 2vw);
+     max-width: max(200px,20vw);
+     max-height: max(200px,30vh);
+     box-sizing: border-box;
+}
+ .photogallery > .gallery * > * {
+     cursor: pointer;
+     pointer-events: all;
+}
+ .photoview {
+     background-color: rgba(var(--black-rgb),.8);
+     width: 100vw;
+     height: 100vh;
+     z-index: 2;
+     top: 0;
+     left: 0;
+     position: fixed;
+     pointer-events: all;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+ .photoel {
+     background-color: var(--white);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding: max(20px,2vw);
+}
+ .photoel * {
+     max-width: max(180px, 80vw);
+     max-height: max(180px, 80vh);
+}
+ 

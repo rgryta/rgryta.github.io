@@ -6,29 +6,54 @@
     <meta name="description" content="R. Gryta • All the finished projects.">
     <link rel="stylesheet" type="text/css" href="/styles/styles.css">
     <script src="/script/main.js"></script>
-    <script id="dynamicscript" src="/script/dynamic/projects.js"></script>
+    <script id="dynamicscript" src="/script/dynamic/project.js"></script>
   </head>
   <body>
     <div id="page">
-	  <div id="start"></div>
+      <div id="start"></div>
       <div id="nav"></div>
       <div id="content">
-        <div class="project">
-          <h2 id="ptitle"  shortname="Barman">Barman</h2>
-          <span id="pshortdesc">STM32-based cocktail-making machine.</span>
-          <img class="picon" src="/img/projects/Default.png" alt="Default icon">
-          <span class="pdescription">
-            <strong>Abstract.</strong> Student project integrating complex embedded STM32 system with an Android application using Bluetooth protocol, allowing for creating cocktails and other beverages. </span>
-          <span class="ptechstack">
-            <strong>Technology:</strong>
-            <span class="indentList">Embedded C++</span>
-            <span class="indentList">Bluetooth</span>
-            <span class="indentList">Java</span>
-          </span>
-          <span class="plinks">
-            <strong>Links:</strong>
-            <a class="indentList" href="https://github.com/SST-20L" target="_blank">GitHub Organization</a>
-          </span>
+        <div>
+          <link rel="stylesheet" type="text/css" href="/styles/pages/project.css">
+          <div class="page-content">
+            <div id="picon">
+              <object data="/img/default.svg"></object>
+            </div>
+            <h1 id="ptitle" shortname="Barman">Barman</h1>
+            <span id="pshortdesc">STM32-based cocktail-making machine for SST and MISK subjects.</span>
+            <div class="pchapter" chapter="Abstract" delimiter=".">Student project integrating complex embedded STM32 system with an Android application using Bluetooth protocol, allowing for creating cocktails and other beverages.</div>
+            <div class="pchapter" chapter="Architecture" delimiter=".">System was split into two parts. Microcontroller that was responsible for controlling pumps connected to the refill bottles and Android application that used Bluetooth to connect to the STM32 to send recipies and intstructions. Exchange of information was performed in duplex mode with the app constantly notifying the user about current process' progress.</div>
+            <div class="pchapter" chapter="Technologies" delimiter=":">
+              <span tag="techstack">C++</span>
+              <span tag="techstack">Bluetooth</span>
+              <span tag="techstack">Java</span>
+            </div>
+            <div class="pchapter" chapter="Links" delimiter=":">
+              <a href="https://github.com/SST-20L" target="_blank">GitHub Organization</a>
+            </div>
+            <div class="photogallery">
+              <div class="gallery">
+                <div>
+                  <object data="/img/project/barman/Barman.png"></object>
+                </div>
+                <div>
+                  <object data="/img/project/barman/Schemat.png"></object>
+                </div>
+                <div>
+                  <object data="/img/project/barman/dodawanie_przepisow.jpg"></object>
+                </div>
+                <div>
+                  <object data="/img/project/barman/menedzer_przepisow.jpg"></object>
+                </div>
+                <div>
+                  <object data="/img/project/barman/menu.jpg"></object>
+                </div>
+                <div>
+                  <object data="/img/project/barman/Polewanie.jpg"></object>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div id="filler"></div>

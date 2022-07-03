@@ -17,19 +17,19 @@ function getSubAddress(index = false) {
     return subaddress == "/index" ? "/" : subaddress
 }
 
-async function initializeContent(){
-		document.getElementById("content").children[0].style.left = "-100%";
-        await new Promise(r => setTimeout(() => r(), 300));
-		document.getElementById("content").children[0].style.left = "0%";
+async function initializeContent() {
+    document.getElementById("content").children[0].style.left = "-100%"
+    await new Promise(r => setTimeout(() => r(), 300))
+    document.getElementById("content").children[0].style.left = null
 }
-	
+
 document.addEventListener("DOMContentLoaded", function() {
-	initializeContent()
+    initializeContent()
     addCoreMeta()
 
     setNavBar()
     setFooter()
-	
+
     setSiteMetaTags(getMainAddress() + getSubAddress())
 });
 
@@ -54,22 +54,22 @@ function setContent() {
 
 function grabURL(url) {
     if (url != window.location.href.split('?')[0].split('#')[0]) {
-        history.pushState({}, null, url)
+        history.replaceState({}, null, url)
 
         setContent()
         setSiteMetaTags(url)
     }
 }
 
-async function addNavSub(nav, product){
-								
-				let el = document.createElement("div")
-				el.style.right = "-8vw";
-				el.innerText = product
-				nav.appendChild(el)
-				
-                    await new Promise(r => setTimeout(() => r(), 200));
-					el.style.right = null
+async function addNavSub(nav, product) {
+
+    let el = document.createElement("div")
+    el.style.right = "var(--nav-sub-right-offset)"
+    el.innerText = product
+    nav.appendChild(el)
+
+    await new Promise(r => setTimeout(() => r(), 200));
+    el.style.right = null
 }
 
 function setNavBarClicks(xhr, content) {
@@ -77,38 +77,42 @@ function setNavBarClicks(xhr, content) {
         let curr = content.querySelector("div[page='" + getSubAddress(true).substr(1) + "']")
         if (curr != null) {
             curr.classList.add("current")
+        } else {
+            let url_elements = getSubAddress(true).substr(1).split('/')
+            let page = url_elements[0]
+            let product = url_elements[1]
+
+            let category = false
+            console.log(page)
+            switch (page) {
+                case 'project':
+                    category = "projects"
+                    product = document.getElementById("ptitle").getAttribute("shortname")
+                    break
+                case 'article':
+                    category = "articles"
+                    product = document.getElementById("article-title").getAttribute("shortname")
+                    break
+                default:
+                    window.alert('Unsupported webpage')
+            }
+            if (category) {
+                let category_nav = content.querySelector("div[page='" + category + "']")
+                category_nav.classList.add("current")
+                addNavSub(category_nav, product)
+            }
         }
-		else{
-			let url_elements = getSubAddress(true).substr(1).split('/')
-			let page = url_elements[0]
-			let product = url_elements[1]
-			
-			let category = false
-			switch (page) {
-				case 'project':
-					category = "projects";
-					product = document.getElementById("ptitle").getAttribute("shortname")
-					break
-				default:
-				    window.alert('Unsupported webpage')
-			}
-			if (category) {
-				let category_nav = content.querySelector("div[page='" + category + "']")
-				category_nav.classList.add("current")
-				addNavSub(category_nav, product)
-			}
-		}
         for (i = 0; i < content.childElementCount; i++) {
             let btn = content.children[i]
             btn.addEventListener("click", async function() {
                 let curr = content.querySelector("div.current")
-				curr.style.marginBottom = null
-				content.querySelectorAll("#nav div div").forEach( async function(el){
-					el.style.right = "-8vw"
+                curr.style.marginBottom = null
+                content.querySelectorAll("#nav div div").forEach(async function(el) {
+                    el.style.right = "var(--nav-sub-right-offset)"
                     await new Promise(r => setTimeout(() => r(), 200));
-					el.remove()
-				})
-				
+                    el.remove()
+                })
+
                 let subaddress = this.getAttribute("page")
                 subaddress = subaddress == "index" ? "/" : "/" + subaddress
                 let url = getMainAddress() + subaddress
@@ -165,7 +169,7 @@ function setInner(url, invoker, doc = true, append = false, finishFun = function
                     await new Promise(r => setTimeout(() => r(), 300));
                     invoker.children[0].remove()
                     el.style.top = null
-					document.querySelector('#start').scrollIntoView()
+                    document.querySelector('#start').scrollIntoView()
 
                 } else {
                     invoker.innerHTML = this.responseText

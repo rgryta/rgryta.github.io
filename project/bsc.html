@@ -10,48 +10,58 @@
   </head>
   <body>
     <div id="page">
-	  <div id="start"></div>
+      <div id="start"></div>
       <div id="nav"></div>
       <div id="content">
-        <div class="project">
-          <h2 id="ptitle" shortname="BSc" >Influence of the Velma robot's wrist attachment method on its performance in simulated selected tasks</h2>
-          <span id="pshortdesc">Bachelor of Science in Engineering thesis project.</span>
-          <img class="picon" src="/img/projects/Default.png" alt="Default icon">
-          <br>
-          <strong>Abstract.</strong> The purpose of this thesis was to verify if currently used wrist geometry in service robot Velma is the best solution and, if not, to find configuration that provides better results in selected tasks. In order to do this there was a need to create simulation environment and work out rules and criteria for quality evaluation. Tests were performed in ROS environment while Gazebo simulator was responsible for physics calculations. <br>
-          <strong>Architecture.</strong> Velma testing system contains two components. ROS environment built upon velma_sim_gazebo and automation scripts allowing for continuous testing. <br>
-          <span class="subproject">
-            <h4 class="sptitle">ROS environement</h4>
-            <img class="spicon" src="/img/projects/ROS.png" alt="Robot Operating System">
-            <span class="spdescription"> Environment system prepared for the robot to perform predefined selection of tests: <span class="identList">- Moving a can between tables.</span>
-              <span class="identList">- Drawing geometry figures in air.</span>
-              <span class="identList">- Opening doors.</span>
-            </span>
-            <span class="sptechstack">
-              <strong>Technology:</strong>
-              <span class="indentList">ROS</span>
-              <span class="indentList">Python</span>
-            </span>
-            <span class="splinks">
-              <strong>Links:</strong>
-              <a class="indentList" href="https://github.com/rgryta/BSc-Velma" target="_blank">GitHub Page</a>
-              <a class="indentList" href="https://github.com/RCPRG-ros-pkg/velma_sim_gazebo" target="_blank">velma_sim_gazebo</a>
-            </span>
-          </span>
-          <span class="subproject">
-            <h4 class="sptitle">Automation scripts</h4>
-            <img class="spicon" src="/img/projects/Terminal.png" alt="Unix Terminal">
-            <span class="spdescription"> Ubuntu 16 was used to perform these test and automation scripts were prepared for changing and executing different environment configurations for it's easier operation. These consist of multiple connected bash scripts that work together. </span>
-            <span class="sptechstack">
-              <strong>Technology:</strong>
-              <span class="indentList">Bash</span>
-              <span class="indentList">Python</span>
-            </span>
-            <span class="splinks">
-              <strong>Links:</strong>
-              <a class="indentList" href="https://github.com/rgryta/BSc-Velma" target="_blank">GitHub Page</a>
-            </span>
-          </span>
+        <div>
+          <link rel="stylesheet" type="text/css" href="/styles/pages/project.css">
+          <div class="page-content">
+            <div id="picon">
+              <object data="/img/default.svg"></object>
+            </div>
+            <h1 id="ptitle" shortname="BSc">Influence of the Velma robot's wrist attachment method on its performance in simulated selected tasks</h1>
+            <span id="pshortdesc">Bachelor of Science in Engineering thesis project.</span>
+            <div class="pchapter" chapter="Abstract" delimiter=".">The purpose of this thesis was to verify if currently used wrist geometry in service robot Velma is the best solution and, if not, to find configuration that provides better results in selected tasks. In order to do this there was a need to create simulation environment and work out rules and criteria for quality evaluation. Tests were performed in ROS environment while Gazebo simulator was responsible for physics calculations.</div>
+            <div class="pchapter" chapter="Architecture" delimiter=".">Velma testing system contains two components. ROS environment built upon velma_sim_gazebo and automation scripts allowing for continuous testing.</div>
+            <div id="pcomptab">
+              <button class="pcompbutton" onclick="openComponent(event, 'component-re')">
+                <div name="ROS environement">
+                  <object data="/img/project/bsc/ROS.png"></object>
+                </div>
+              </button>
+              <button class="pcompbutton" onclick="openComponent(event, 'component-as')">
+                <div name="Automation scripts">
+                  <object data="/img/project/bsc/Terminal.png"></object>
+                </div>
+              </button>
+            </div>
+            <div id="component-re" class="pcomponent">
+              <h3>ROS environement</h3>
+              <div> Environment system prepared for the robot to perform predefined selection of tests: <span class="identList">Moving a can between tables.</span>
+                <span class="identList">Drawing geometry figures in air.</span>
+                <span class="identList">Opening doors.</span>
+              </div>
+              <div class="pchapter" chapter="Technologies" delimiter=":">
+                <span tag="techstack">ROS</span>
+                <span tag="techstack">Python</span>
+              </div>
+              <div class="pchapter" chapter="Links" delimiter=":">
+                <a href="https://github.com/rgryta/BSc-Velma" target="_blank">GitHub Page</a>
+                <a href="https://github.com/RCPRG-ros-pkg/velma_sim_gazebo" target="_blank">velma_sim_gazebo</a>
+              </div>
+            </div>
+            <div id="component-as" class="pcomponent">
+              <h3>Automation scripts</h3>
+              <div> Ubuntu 16 was used to perform these test and automation scripts were prepared for changing and executing different environment configurations for it's easier operation. These consist of multiple connected bash scripts that work together.</div>
+              <div class="pchapter" chapter="Technology" delimiter=":">
+                <span tag="techstack">Bash</span>
+                <span tag="techstack">Python</span>
+              </div>
+              <div class="pchapter" chapter="Links" delimiter=":">
+                <a href="https://github.com/rgryta/BSc-Velma" target="_blank">GitHub Page</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div id="filler"></div>

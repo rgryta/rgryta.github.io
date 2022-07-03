@@ -6,34 +6,36 @@
     <meta name="description" content="R. Gryta • All the finished projects.">
     <link rel="stylesheet" type="text/css" href="/styles/styles.css">
     <script src="/script/main.js"></script>
-    <script id="dynamicscript" src="/script/dynamic/projects.js"></script>
+    <script id="dynamicscript" src="/script/dynamic/project.js"></script>
   </head>
   <body>
     <div id="page">
-	  <div id="start"></div>
+      <div id="start"></div>
       <div id="nav"></div>
       <div id="content">
-        <div class="project">
-          <h2 id="ptitle" shortname="OpenCL">Accelerator Design With OpenCL</h2>
-          <span id="pshortdesc">Several quick programs allowing for applying video filters. Made for ATHENS Network student exchange.</span>
-          <img class="picon" src="/img/projects/Default.png" alt="Default icon">
-          <span class="pdescription">  <br>
-            <strong>Abstract.</strong>
-            <span class="identList">- Write basic OpenCL programs (both host program and kernel) for FPGAs.</span>
-            <span class="identList">- Write basic OpenCL programs for programming GPUs.</span>
-            <span class="identList">- Be familiar with notions of optimization for performance.</span>
-          </span>
-          <img class="picon" src="/img/projects/OpenCL.png" alt="Identity Data Provider">
-          <span class="ptechstack">
-            <strong>Technology:</strong>
-            <span class="indentList">C++</span>
-            <span class="indentList">OpenCL</span>
-            <span class="indentList">Make</span>
-          </span>
-          <span class="plinks">
-            <strong>Links:</strong>
-            <a class="indentList" href="https://github.com/rgryta/TP39-OpenCL" target="_blank">GitHub Page</a>
-          </span>
+        <div>
+          <link rel="stylesheet" type="text/css" href="/styles/pages/project.css">
+          <div class="page-content">
+            <div id="picon">
+              <object data="/img/project/tp39/OpenCL.png"></object>
+            </div>
+            <h1 id="ptitle" shortname="OpenCL">Accelerator Design With OpenCL</h1>
+            <span id="pshortdesc">Several quick programs allowing for applying video filters. Made for ATHENS Network student exchange.</span>
+            <div class="pchapter" chapter="Abstract" delimiter=".">
+              <span class="identList">Write basic OpenCL programs (both host program and kernel) for FPGAs.</span>
+              <span class="identList">Write basic OpenCL programs for programming GPUs.</span>
+              <span class="identList">Be familiar with notions of optimization for performance.</span>
+            </div>
+            <div class="pchapter" chapter="Architecture" delimiter=".">Each program consists of three parts: Makefile, CPP and OpenCL sourcefiles. Programs are then uploaded onto the microcontrollers via SSH and run remotely.</div>
+            <div class="pchapter" chapter="Technologies" delimiter=":">
+              <span tag="techstack">C++</span>
+              <span tag="techstack">OpenCL</span>
+              <span tag="techstack">Make</span>
+            </div>
+            <div class="pchapter" chapter="Links" delimiter=":">
+              <a href="https://github.com/rgryta/TP39-OpenCL" target="_blank">GitHub Page</a>
+            </div>
+          </div>
         </div>
       </div>
       <div id="filler"></div>

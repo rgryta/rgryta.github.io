@@ -1,224 +1,192 @@
 @import url(fonts.css);
-
-:root {
-    --black: #0A0908;
-    --red: #49111C;
-    --white: #F2F4F3;
-    --green: #5C946E;
-    --purple: #9381FF;
-	--flame: #E4572E;
-	--lime: #FCFF4B;
-	--mint: #E6EFE9;
-	--sky: #42CAFD;
-	--magenta: #7C238C;
-	
-	--main-border-color: var(--black);
-	
-	--main-bg-color: var(--white);
-	--secondary-bg-color: var(--black);
-	
-	--main-text-color: var(--black);
-	--secondary-text-color: var(--white);
-	
-	
-	
-	--nav-width: max(55px, 6vw);
-	--nav-right: max(35px, 2vw);
-	
-	--nav-height: max(20px, 1.6vw);
-	
-	--nav-line: max(2px, .1vw);
-	
-	--nav-main-text: max(20px, 1.4vw);
-	--nav-sub-text: max(16px, 1vw);
-	
-	--nav-main-offset: max(8px, 1vw);
-	--nav-sub-offset: max(4px, .5vw);
-	
-	--nav-margin-base: max(3px, .4vw);
-	--nav-margin-large: max(25px, 2vw);
-	
-	--content-margin-right: max(100px, 17vw);
-	--content-margin-left: calc( max(100px, 17vw) - 90px ) ;
+ :root, ::after, ::before {
+     --black: #0A0908;
+     --black-rgb: 10, 9, 8;
+     --red: #49111C;
+     --red-rgb: 73, 17, 28;
+     --white: #F2F4F3;
+     --white-rgb: 242, 244, 243;
+     --green: #5C946E;
+     --purple: #9381FF;
+     --flame: #E4572E;
+     --lime: #FCFF4B;
+     --mint: #E6EFE9;
+     --sky: #42CAFD;
+     --magenta: #7C238C;
+     --main-border-color: var(--black);
+     --main-bg-color: var(--white);
+     --secondary-bg-color: var(--black);
+     --main-text-color: var(--black);
+     --secondary-text-color: var(--white);
+     --nav-width: max(55px, 6vw);
+     --nav-right: max(35px, 2vw);
+     --nav-height: max(20px, 1.6vw);
+     --nav-line: max(2px, .1vw);
+     --nav-main-text: max(20px, 1.4vw);
+     --nav-sub-text: max(16px, 1vw);
+     --nav-border: max(2px, .3vw);
+     --nav-main-offset: max(8px, 1vw);
+     --nav-sub-offset: max(4px, .5vw);
+     --nav-margin-base: max(3px, .4vw);
+     --nav-margin-large: max(25px, 2vw);
+     --nav-sub-right-offset: min(-80px, -8vw);
+     --content-margin-right: max(100px, 17vw);
+     --content-margin-left: calc(max(100px, 17vw) - 90px);
+     --content-width: calc(100% - calc(var(--content-margin-right) + var(--content-margin-left)));
+     --content-font-size: max(16px, 1vw);
 }
-
-
-html {
-    padding: 0px;
-    display: flex;
-    align-content: stretch;
-    flex-direction: column;
-	
-	-webkit-user-select: none;     
-	-moz-user-select: none;
-	user-select: none;
+ html {
+     padding: 0px;
+     display: flex;
+     align-content: stretch;
+     flex-direction: column;
+     -webkit-user-select: none;
+     -moz-user-select: none;
+     user-select: none;
 }
-
-body {
-	background-color: var(--main-bg-color);
-    color: var(--main-text-color);
-	font-family: 'Alata', sans-serif;
+ body {
+     background-color: var(--main-bg-color);
+     color: var(--main-text-color);
+     font-family: 'Alata', sans-serif;
 }
-
-html, body {
-    margin: 0px;
-    height: 100vh;
-    width: 100vw;
-    max-width: 100%;
-    overflow-x: hidden;
+ html, body {
+     margin: 0px;
+     height: 100vh;
+     width: 100vw;
+     max-width: 100%;
+     overflow-x: hidden;
 }
-
-h1, h2, h3, h4 {
-    font-variant: small-caps;
+ h1, h2, h3, h4 {
+     font-variant: small-caps;
 }
-
-
-#page {
-    position: fixed;
-    top: 0px;
-    bottom: 0px;
-    overflow-y: scroll;
-	width:100vw;
-	padding: 0px;
-    display: flex;
-    flex-flow: column;
-	
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+ object {
+     pointer-events: none;
 }
-
-#page::-webkit-scrollbar {
-  display: none;
+ #page {
+     position: fixed;
+     top: 0px;
+     bottom: 0px;
+     overflow-y: scroll;
+     width: 100vw;
+     padding: 0px;
+     display: flex;
+     flex-flow: column;
+     -ms-overflow-style: none;
+     scrollbar-width: none;
 }
-
-
-#nav {
-    display: flex;
-    position: fixed;
-    top: 10%;
-    z-index: 2;
-    right: var(--nav-right);
-    flex: 0 1 auto;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: flex-start;
-    justify-content: space-evenly;
-    align-items: flex-start;
-	
-	width: var(--nav-width);
+ #page::-webkit-scrollbar {
+     display: none;
 }
-
-#nav div.current {
-	padding-left: var(--nav-main-offset);
-    border-left: solid;
+ #nav {
+     display: flex;
+     position: fixed;
+     top: 10%;
+     z-index: 2;
+     right: var(--nav-right);
+     flex: 0 1 auto;
+     flex-direction: column;
+     flex-wrap: wrap;
+     align-content: flex-start;
+     justify-content: space-evenly;
+     align-items: flex-start;
+     width: var(--nav-width);
 }
-
-#nav div.current:hover {
-	padding-left: var(--nav-main-offset);
+ #nav div.current {
+     padding-left: var(--nav-main-offset);
+     border-left: solid var(--nav-border);
 }
-
-#nav div {
-	display:flex;
-    flex-direction: column;
-    align-items: flex-start;
-    position: relative;
-	width: var(--nav-width);
-    margin-top: var(--nav-margin-base);
-    margin-bottom: var(--nav-margin-base);
-	font-size: var(--nav-main-text);
-	
-	
-    transition: all .2s;
-	
-	cursor: pointer;
+ #nav div.current:hover {
+     padding-left: var(--nav-main-offset);
 }
-#nav div:hover {
-	padding-left: var(--nav-sub-offset);
+ #nav div {
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+     position: relative;
+     width: var(--nav-width);
+     margin-top: var(--nav-margin-base);
+     margin-bottom: var(--nav-margin-base);
+     font-size: var(--nav-main-text);
+     transition: all .2s ease;
+     cursor: pointer;
 }
-
-#nav div div {
-	height: var(--nav-height);
-    width: auto;
-    display: block;
-    box-sizing: border-box;
-	
-	font-size: var(--nav-sub-text);
-	padding-left: 0px;
-	right: 0px;
+ #nav div:hover {
+     padding-left: var(--nav-sub-offset);
 }
-
-#nav div div:hover {
-	padding-left: 0px;
+ #nav div div {
+     height: var(--nav-height);
+     width: auto;
+     display: block;
+     box-sizing: border-box;
+     position: relative;
+     font-size: var(--nav-sub-text);
+     padding-left: 0px;
+     right: 0px;
 }
-
-#nav div div::before {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 0%;
-  height: var(--nav-line);
-  bottom: 50%;
-  left: 0%;
-  background-color: var(--main-text-color);
-  transform: translateY(100%);
-  transition: width 0.2s ease;
+ #nav div div:hover {
+     padding-left: 0px;
 }
-
-#nav div div:hover::before {
-  width: 100%;
+ #nav div div::before {
+     content: "";
+     position: absolute;
+     display: block;
+     width: 0%;
+     height: var(--nav-line);
+     bottom: 50%;
+     left: 0%;
+     background-color: var(--main-text-color);
+     transform: translateY(100%);
+     transition: width 0.2s ease;
 }
-
-
-#content {
-    display: contents;
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    z-index: 1;
-    flex: 0 1 auto;
-	
-    text-align: justify;
+ #nav div div:hover::before {
+     width: 100%;
 }
-
-#content div {
-	position: relative;
-	top: 0px;
-	left: 0px;
-	padding: 50px var(--content-margin-right) 50px var(--content-margin-left);
-    align-self: center;
-	transition: all .3s;
+ #content {
+     display: contents;
+     position: fixed;
+     top: 0px;
+     left: 0px;
+     z-index: 1;
+     flex: 0 1 auto;
+     text-align: justify;
+     font-size: var(--content-font-size);
 }
-#content div div {
-	position: unset;
-	top: unset;
-	left: unset;
-	padding: unset;
-    align-self: center;
+ #content h1 {
+     font-size: 2.2em;
 }
-
-#filler {
-    flex: 1 1 auto;
+ #content h2 {
+     font-size: 1.8em;
 }
-
-
-
-#footer {
-	background-color: var(--secondary-bg-color);
-	color: var(--secondary-text-color);
-	
-    position: relative;
-    bottom: 0%;
-	width: 100%;
-    padding: 20px;
-    text-align: center;
-    flex: 0 1 40px;
-    box-sizing: border-box;
-	
-    z-index: 0;
-	
+ #content h3 {
+     font-size: 1.4em;
 }
-
-a {
-	color: inherit;
+ #content * {
+     transition: right .3s, left .3s, top .3s, bottom .3s, filter .3s, transform .3s;
 }
-
+ #content > div {
+     position: relative;
+     top: 0px;
+     left: 0px;
+     padding: 50px var(--content-margin-right) 50px var(--content-margin-left);
+     align-self: center;
+     width: var(--content-width);
+}
+ #filler {
+     flex: 1 1 auto;
+}
+ #footer {
+     background-color: var(--secondary-bg-color);
+     color: var(--secondary-text-color);
+     position: relative;
+     bottom: 0%;
+     width: 100%;
+     padding: 20px;
+     text-align: center;
+     flex: 0 1 40px;
+     box-sizing: border-box;
+     z-index: 0;
+}
+ a {
+     color: inherit;
+}
+ 
