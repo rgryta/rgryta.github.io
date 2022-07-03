@@ -12,6 +12,9 @@ h1, h2, h3 {
  div.section{
      width: 50vw !important;
      text-align: center;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
 }
  div.section:not(:first-of-type) {
      margin-top: clamp(50px, 10vh, 200px);
