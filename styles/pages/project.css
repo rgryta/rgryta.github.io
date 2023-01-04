@@ -9,15 +9,9 @@ h1, h2, h3 {
 }
  #picon {
      box-sizing: border-box;
-     width: 15vw !important;
-     height: 15vw !important;
+     width: max(70px,10vw) !important;
+     height: max(70px,10vw) !important;
      align-self: center !important;
-     transition: transform .2s .1s;
-     transform: scale3d(1,1,1);
-}
- #picon:hover {
-     transition: unset;
-     transform: var(--transform);
 }
  #picon object {
      width: 100%;
@@ -45,7 +39,7 @@ h1, h2, h3 {
 }
  #pcomptab {
      background-color: var(--red);
-     padding: 0px 50px !important;
+     padding: 0px max(20px, 2vw) !important;
      display: flex;
      flex-direction: row;
      flex-wrap: wrap;
@@ -105,7 +99,7 @@ h1, h2, h3 {
 }
  .pcomponent {
      position: relative !important;
-     width: max(500px,35vw) !important;
+     width: clamp(20px,35vw,500px) !important;
      align-self: center !important;
      display: none;
 }

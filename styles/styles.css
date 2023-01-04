@@ -18,7 +18,7 @@
      --secondary-bg-color: var(--black);
      --main-text-color: var(--black);
      --secondary-text-color: var(--white);
-     --nav-width: max(55px, 6vw);
+     --nav-width: max(75px, 12vw);
      --nav-right: max(35px, 2vw);
      --nav-height: max(20px, 1.6vw);
      --nav-line: max(2px, .1vw);
@@ -30,7 +30,7 @@
      --nav-margin-base: max(3px, .4vw);
      --nav-margin-large: max(25px, 2vw);
      --nav-sub-right-offset: min(-80px, -8vw);
-     --content-margin-right: max(100px, 17vw);
+     --content-margin-right: max(120px, 23vw);
      --content-margin-left: calc(max(100px, 17vw) - 90px);
      --content-width: calc(100% - calc(var(--content-margin-right) + var(--content-margin-left)));
      --content-font-size: max(16px, 1vw);

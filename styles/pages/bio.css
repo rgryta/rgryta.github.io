@@ -95,9 +95,6 @@ div.section {
  div.badges > div:hover::after {
      filter: opacity(1);
 }
- div.badges > div:hover {
-     cursor: help;
-}
  div.badges > div > * {
      height: inherit;
      max-height: inherit;
