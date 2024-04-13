@@ -93,6 +93,10 @@ function setNavBarClicks(xhr, content) {
                     category = "articles"
                     product = document.getElementById("article-title").getAttribute("shortname")
                     break
+                case 'info':
+                    category = "infos"
+                    product = document.getElementById("ptitle").getAttribute("shortname")
+                    break
                 default:
                     window.alert('Unsupported webpage')
             }
